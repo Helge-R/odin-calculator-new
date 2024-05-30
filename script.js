@@ -1,6 +1,20 @@
-let firstNumber  = '';
-let operator     = '';
-let secondNumber = '';
+let previousValue  = '';
+let operator       = '';
+let currentValue   = '';
+
+// Setup when HTML document has been completely parsed
+document.addEventListener("DOMContentLoaded", function() {
+
+  let numbers = document.querySelectorAll(".number");
+
+  let currentScreen = document.querySelector(".current");
+
+  numbers.forEach((number) => number.addEventListener("click", function(e){
+    handleNumber(e.target.textContent);
+    currentScreen.textContent = currentValue;
+  }));
+
+});
 
 
 /* Basic math operator functions */
@@ -32,4 +46,9 @@ function operate(num1, num2, operator) {
     case "divide":
       return divide(num1, num2);
   }
+}
+
+
+function handleNumber(num) {
+  currentValue += num;
 }

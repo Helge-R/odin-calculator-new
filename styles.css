@@ -13,14 +13,14 @@ body {
   align-items: center;
 }
 
-.btn {
+button {
   height: 50px;
   width: 50px;
   margin: 15px;
   font-size: 40px;
 }
 
-.btn#clear-button {
+button#clear-button {
   width: 135px;
   margin: 15px;
   color: lightcoral;
